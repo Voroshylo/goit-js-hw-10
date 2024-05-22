@@ -1,1 +1,0 @@
-.timer{display:flex;gap:10px}.field{display:flex;flex-direction:column;align-items:center}.value{font-size:2rem;font-weight:700}.label{font-size:1rem}button[disabled]{background-color:gray;cursor:not-allowed}.message{color:red;margin-top:10px}
