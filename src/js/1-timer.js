@@ -22,7 +22,7 @@ const options = {
   onClose(selectedDates) {
     userSelectedDate = selectedDates[0];
     if (userSelectedDate <= new Date()) {
-      iziToast.error({ title: 'Error', message: 'Please choose a date in the future' });
+      iziToast.error({ title: 'Error', message: 'Please choose a date in the future', position: 'topRight' });
       startButton.disabled = true;
     } else {
       startButton.disabled = false;
@@ -48,7 +48,7 @@ startButton.addEventListener('click', () => {
       clearInterval(timerInterval);
       datePickerInput.disabled = false;
       startButton.disabled = true;
-      iziToast.success({ title: 'Success', message: 'Countdown finished!' });
+      iziToast.success({ title: 'Success', message: 'Countdown finished!', position: 'topRight' });
     } else {
       updateTimerDisplay(timeDifference);
     }
