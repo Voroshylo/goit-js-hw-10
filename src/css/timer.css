@@ -38,13 +38,3 @@ button[data-start] {
   /* background-color: aquamarine; */
 }
 
-.notification {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  padding: 10px;
-  background-color: red;
-  color: white;
-  border-radius: 5px;
-  display: none;
-}
