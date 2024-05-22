@@ -21,7 +21,9 @@ input {
 
 .label {
   font-size: 24px;
-  color: blue;
+  background: linear-gradient(135deg, #12BCB0 20%, #FABE0E 70%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 button[disabled] {
@@ -29,6 +31,11 @@ button[disabled] {
   cursor: not-allowed;
   min-width: 130px;
   min-height: 35px;
+}
+button[data-start] {
+  min-width: 130px;
+  min-height: 35px;
+  /* background-color: aquamarine; */
 }
 
 .notification {
