@@ -11,6 +11,7 @@ const daysSpan = document.querySelector('[data-days]');
 const hoursSpan = document.querySelector('[data-hours]');
 const minutesSpan = document.querySelector('[data-minutes]');
 const secondsSpan = document.querySelector('[data-seconds]');
+const notificationDiv = document.getElementById('notification');
 
 const options = {
   enableTime: true,
@@ -68,18 +69,24 @@ function convertMs(ms) {
   const day = hour * 24;
   const days = Math.floor(ms / day);
   const hours = Math.floor((ms % day) / hour);
-  const minutes = Math.floor(((ms % day) % hour) / minute);
-  const seconds = Math.floor((((ms % day) % hour) % minute) / second);
+  const minutes = Math.floor((ms % hour) / minute);
+  const seconds = Math.floor((ms % minute) / second);
   return { days, hours, minutes, seconds };
 }
+
 function addLeadingZero(value) {
   return String(value).padStart(2, '0');
- }
+}
 
 function showMessage(message) {
-  messageDiv.textContent = message;
+  notificationDiv.textContent = message;
+  notificationDiv.style.display = 'block';
+  setTimeout(() => {
+    notificationDiv.style.display = 'none';
+  }, 3000);
 }
 
 function clearMessage() {
-  messageDiv.textContent = '';
+  notificationDiv.textContent = '';
+  notificationDiv.style.display = 'none';
 }
