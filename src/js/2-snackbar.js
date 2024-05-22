@@ -22,7 +22,7 @@ form.addEventListener('submit', async (event) => {
       showErrorMessage(result);
     }
 } catch (error) {
-  showErrorMessage('An error occurred: ${error.message}');
+  showErrorMessage('An error occurred');
     
   }
 });
