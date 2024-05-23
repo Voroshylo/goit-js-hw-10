@@ -1,4 +1,11 @@
-input {
+.link-page {
+      display: flex;
+    margin-bottom: 12px;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+}
+.data-input {
   min-width: 190px;
   min-height: 30px;
 }

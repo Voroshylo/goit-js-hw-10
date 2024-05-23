@@ -7,6 +7,11 @@ form.addEventListener('submit', async (event) => {
   event.preventDefault();
   const delayInput = form.querySelector('input[name="delay"]');
   const stateInput = form.querySelector('input[name="state"]:checked');
+  if (!stateInput) {
+    showMessage('Please select a state.');
+    return;
+  }
+
   const delay = parseInt(delayInput.value);
   const state = stateInput.value;
   
@@ -14,6 +19,7 @@ form.addEventListener('submit', async (event) => {
     showMessage('Please enter a valid delay value.');
     return;
   }
+
   try {
     const result = await generatePromise(delay, state);
     if (state === 'fulfilled') {
@@ -21,9 +27,8 @@ form.addEventListener('submit', async (event) => {
     } else {
       showErrorMessage(result);
     }
-} catch (error) {
-  showErrorMessage('An error occurred');
-    
+  } catch (error) {
+    showErrorMessage(error); // передача фактичного значення помилки (затримки)
   }
 });
 
